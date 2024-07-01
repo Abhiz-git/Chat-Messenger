@@ -1,0 +1,5 @@
+﻿  Client.cpp
+C:\Users\Akshata\Desktop\Nvodita Chat messanger - Copy\Client 2\Client.cpp(87,52): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+Client.obj : error LNK2019: unresolved external symbol "void __cdecl Sent(unsigned __int64)" (?Sent@@YAX_K@Z) referenced in function main
+Client.obj : error LNK2019: unresolved external symbol "void __cdecl Recv(unsigned __int64)" (?Recv@@YAX_K@Z) referenced in function main
+C:\Users\Akshata\Desktop\Nvodita Chat messanger - Copy\Client 2\x64\Debug\Client 2.exe : fatal error LNK1120: 2 unresolved externals

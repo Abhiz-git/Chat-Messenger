@@ -1,0 +1,3 @@
+﻿  main.cpp
+main.obj : error LNK2019: unresolved external symbol "void __cdecl IWC(unsigned __int64,class std::vector<unsigned __int64,class std::allocator<unsigned __int64> > &)" (?IWC@@YAX_KAEAV?$vector@_KV?$allocator@_K@std@@@std@@@Z) referenced in function main
+C:\Users\Akshata\Desktop\Nvodita Chat messanger - Copy\Server\x64\Debug\Server.exe : fatal error LNK1120: 1 unresolved externals
