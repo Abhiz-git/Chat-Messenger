@@ -1,28 +1,39 @@
-# Chat-Messenger
-Chat Messenger using Socket Programing in C++
+# Client-Server Chat Application
 
-Client-Server Chat Application
+<hr>
+<h3>Chat Messenger using Socket Programing, Client-Server Architecture in C++</h3> <br>
 
-1.	Introduction
-
-1.1 Purpose
-The purpose of this documentation is to describe the design, implementation, and functionality of a client-server chat application developed using C++ and Winsock.
-
-1.2 Scope
-This application allows multiple clients to connect to a central server over a network. Clients can send and receive messages through the server, enabling real-time communication between users.
-
-1.	Architecture Overview
-
-2.1  System Architecture
-	The application follows a client-server architecture:
-•	Server: Acts as a central hub for all client communications. Manages client connections, relays messages between clients, and ensures data integrity.
-•	Clients: Connect to the server using TCP/IP sockets. Send messages to the server, which then distributes these messages to other connected clients.
-
-2.2 Technologies Used
-•	Programming Language: C++
-•	Network Library: Winsock (Windows Sockets)
-•	Threading: Utilized for concurrent message handling in clients and server.
-
+<ol>
+	<li><b>Introduction</b>
+<br>
+	<ol>
+		<li><b>Purpose: </b><br>&emsp;The purpose of this documentation is to describe the design, implementation, and functionality of a client-server chat application developed using C++ and Winsock.</li>
+		<br>
+		<li><b>Scope: </b><br>
+		&emsp; This application allows multiple clients to connect to a central server over a network. Clients can send and receive messages through the server, enabling real-time communication between users.</li>
+<br>
+<br>
+	</ol>
+<li><b>Architecture Overview</b></li>
+	<br>
+	<ol>
+		<li><b>System Architecture</b></li>
+		The application follows a client-server architecture:
+		<br>
+		<ul>
+		<li>&emsp;Server: Acts as a central hub for all client communications. Manages client connections, relays messages between clients, and ensures data integrity.</li>
+		<br>
+		<li>&emsp;Clients: Connect to the server using TCP/IP sockets. Send messages to the server, which then distributes these messages to other connected clients.</li>
+		</ul>
+  <br>
+		<li><b>Technologies Used</b></li>
+		<ul>
+			<li><b>Programming Language:</b> C++.</li>
+			<li><b>Network Library:</b> Winsock (Windows Sockets).</li>   
+			<li><b>Threading:</b> Utilized for concurrent message handling in clients and server.</li>
+		</ul>
+<br>
+<br>
 3. Functional Requirements
 3.1 Server Features
 •	Accept Connections: Listens for incoming client connections.
