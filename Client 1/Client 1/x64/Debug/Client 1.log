@@ -1,0 +1,4 @@
+﻿  Client1.cpp
+C:\Users\Akshata\Desktop\Nvodita Chat messanger - Copy\Client 1\Client1.cpp(71,18): error C2065: 'Sent': undeclared identifier
+C:\Users\Akshata\Desktop\Nvodita Chat messanger - Copy\Client 1\Client1.cpp(72,20): error C2065: 'Recv': undeclared identifier
+C:\Users\Akshata\Desktop\Nvodita Chat messanger - Copy\Client 1\Client1.cpp(87,52): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
