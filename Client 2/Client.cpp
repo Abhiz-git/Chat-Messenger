@@ -93,3 +93,74 @@ int main()
 
 	return 0;
 }
+
+
+
+//////////////////////////////////////////////////////////  <summary> ////////////////////////////////////////////////////////////////////
+/// Name: Abhishek Dilipkumar Nale
+/// Date: 02/07/2024
+/// Updates:		
+///						->2 Threads created: in main()
+///							.> 1st thread to send message (sender)
+///							.> 2nd thread to recv message (reciver)
+///						
+///						->Parallel working of threads 
+///						->if nobody is connected still both the treads are kept joined to server.
+///						->close the socket
+/// 
+///	Abbrevation:	msg -> message
+///					
+//////////////////////////////////////////////////////////// </summary> ///////////////////////////////////////////////////////////////////
+
+
+void Sent(SOCKET s)															// Sending Function
+{
+	cout << "Enter your name: ";
+	string name;
+	cin.ignore();
+	getline(cin, name);
+	string msg;
+
+	while (1)
+	{
+		getline(cin, msg);
+		string chat = name + " : " + msg;
+		cout << "";
+		int bytesSend = send(s, chat.c_str(), chat.length(), 0);
+		if (bytesSend == SOCKET_ERROR)
+		{
+			cout << "error sending message" << endl;
+			break;
+		}
+		if (msg == "Bye" || msg == "Bbye" || msg == "C ya" || msg == "bye")
+		{
+			cout << "Application Stopped. Come Back Soon" << endl;
+			break;
+		}
+	}
+	closesocket(s);
+	WSACleanup();
+}
+
+void Recv(SOCKET s)
+{
+	char buffer[4096];
+	int msglength;
+	string chat = "";
+	while (1)
+	{
+		msglength = recv(s, buffer, sizeof(buffer), 0);
+		if (msglength <= 0)
+		{
+			cout << "disconnected from the server" << endl;
+			break;
+		}
+		else
+		{
+			chat = string(buffer, msglength);
+			cout << chat << endl;
+		}
+	}
+	closesocket(s);
+	WSACleanup();
+}
