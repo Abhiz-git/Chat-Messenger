@@ -103,5 +103,52 @@ int main()
 	WSACleanup();
 	
 		return 0;
+}
 
+
+///////////////////////////////////////////////////////////////////// <summary> /////////////////////////////////////////////////////////////
+/// Name: Abhishek Dilipkumar Nale
+/// Date: 14/ 06 / 2024
+/// Updates:	
+///		.> Included thread so
+///						
+/// 
+///	Abbrevation:	IWC -> Interact With Client
+///					cSoc_rmv -> close Socket remove
+///////////////////////////////////////////////////////////////////// </summary> //////////////////////////////////////////////////////////////
+
+
+void IWC(SOCKET clientSocket, vector<SOCKET>& clients)										// send and recv client
+{
+	cout << "Connected the the client" << endl;
+
+	char buffer[4096];
+	while (1)
+	{
+		int bytesRecv = recv(clientSocket, buffer, sizeof(buffer), 0);							// recv
+
+		if (bytesRecv <= 0)
+		{
+			cout << "client disconnected" << endl;
+			break;
+		}
+		string message(buffer, bytesRecv);
+		cout << "message from client: " << message << endl;
+
+		for (auto client : clients)
+		{
+			if (client != clientSocket)
+			{
+				send(client, message.c_str(), message.length(), 0);
+			}
+		}
+	}
+	
+	auto cSoc_rmv = find(clients.begin(), clients.end(), clientSocket);				//clearing vector (it)
+	if (cSoc_rmv != clients.end())
+	{
+		clients.erase(cSoc_rmv);
+	}
+
+	closesocket(clientSocket);
 }
