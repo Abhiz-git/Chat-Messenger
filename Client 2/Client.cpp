@@ -68,13 +68,6 @@ int main()
 
 	cout << "client program started" << endl;
 
-	thread sender_T(Sent, s);													// thread
-	thread receiver_T(Recv, s);													// thread	
-
-	sender_T.join();
-	receiver_T.join();
-
-
 	string message = "Namaskar..!";
 	const char* m_c_str = message.c_str();
 	if (!m_c_str)
@@ -90,6 +83,12 @@ int main()
 	{
 		cout << "send failed" << endl;
 	}
+
+	thread sender_T(Sent, s);													// thread
+	thread receiver_T(Recv, s);													// thread	
+
+	sender_T.join();
+	receiver_T.join();
 
 	return 0;
 }
